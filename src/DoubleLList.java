@@ -1,7 +1,7 @@
 public class DoubleLList {
 
     private int courseCount;
-    private int totalCourseCount;
+    private int totalStudentCount;
     private ClassNode head;
     private ClassNode tail;
 
