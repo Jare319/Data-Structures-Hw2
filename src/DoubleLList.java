@@ -6,13 +6,20 @@ public class DoubleLList {
     private ClassNode tail;
 
     DoubleLList() {
-
+        this.courseCount = 0;
+        this.totalStudentCount = 0;
     }
 
-    public void addClass() {
-        this.tail.setNext(new ClassNode());
-        this.tail.getNext().setPrevious(this.tail);
-        this.setTail(this.tail.getNext());
+    public void addClass(String courseName, String courseNumber) {
+        if (this.head == null && this.tail == null) {
+            this.head = new ClassNode(courseName, courseNumber);
+            this.tail = this.head;
+        } else {
+            this.tail.setNext(new ClassNode(courseName, courseNumber));
+            this.tail.getNext().setPrevious(this.tail);
+            this.setTail(this.tail.getNext());
+        }
+        this.courseCount++;
     }
 
     public void removeClass() {
@@ -33,5 +40,26 @@ public class DoubleLList {
 
     public ClassNode getTail() {
         return this.tail;
+    }
+
+    public ClassNode search(String courseNumber) {
+        ClassNode node = this.head;
+        if (node != null) {
+            while (node != null) {
+                if (node.getCourseNumber().equals(courseNumber)) {
+                    return node;
+                }
+                node = node.getNext();
+            }
+        }
+        return null;
+    }
+
+    public int getCourseCount() {
+        return this.courseCount;
+    }
+
+    public int getStudentCount() {
+        return this.totalStudentCount;
     }
 }

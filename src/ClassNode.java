@@ -7,8 +7,9 @@ public class ClassNode {
     private ClassNode previous;
     private SingleLList studentList;
 
-    ClassNode() {
-
+    ClassNode(String courseName, String courseNumber) {
+        this.courseName = courseName;
+        this.courseNumber = courseNumber;
     }
 
     public void setNext(ClassNode node) {
@@ -25,5 +26,20 @@ public class ClassNode {
 
     public ClassNode getPrevious() {
         return this.previous;
+    }
+
+    public String getCourseName() {
+        return this.courseName;
+    }
+
+    public String getCourseNumber() {
+        return this.courseNumber;
+    }
+
+    public void addStudent(ClassNode node, String first, String last, String id, String email, String adr, String city) {
+        first = first.replace("\""," ").replaceFirst(" ", "");
+        last = last.replace("\"", "").replace(" ", "");
+        //adr = ard.replace("\"");
+        //node.studentList.addStudent();
     }
 }

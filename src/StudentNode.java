@@ -6,8 +6,11 @@ public class StudentNode {
     private String address;
     private StudentNode next;
 
-    StudentNode() {
-
+    StudentNode(String studentName, String studentId, String email, String address) {
+        this.studentName = studentName;
+        this.studentId = studentId;
+        this.email = email;
+        this.address = address;
     }
 
     //---SETTERS---//
