@@ -39,7 +39,13 @@ public class ClassNode {
     public void addStudent(ClassNode node, String first, String last, String id, String email, String adr, String city) {
         first = first.replace("\""," ").replaceFirst(" ", "");
         last = last.replace("\"", "").replace(" ", "");
-        //adr = ard.replace("\"");
-        //node.studentList.addStudent();
+        adr = adr.concat(city);
+        node.studentList.addStudent(first, last, id, email, adr);
+    }
+
+    public void addStudent(ClassNode node, String first, String last, String id, String email, String adr) {
+        first = first.replace("\""," ").replaceFirst(" ", "");
+        last = last.replace("\"", "").replace(" ", "");
+        node.studentList.addStudent(first, last, id, email, adr);
     }
 }

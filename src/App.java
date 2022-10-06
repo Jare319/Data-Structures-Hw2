@@ -1,5 +1,4 @@
 import java.util.Scanner;
-import java.util.concurrent.ThreadPoolExecutor.DiscardOldestPolicy;
 import java.io.File;
 import java.io.FileNotFoundException;
 
@@ -160,7 +159,12 @@ public class App {
             String[] inArr = fileScnr.nextLine().split(",");
             ClassNode node = classList.search(inArr[0]);
             if (node != null) {
-                node.addStudent(node, inArr[3], inArr[2], inArr[4], inArr[5], inArr[6], inArr[7]);
+                try {
+                    node.addStudent(node, inArr[3], inArr[2], inArr[4], inArr[5], inArr[6], inArr[7]);
+                } catch (Exception e) {
+                    node.addStudent(node, inArr[3], inArr[2], inArr[4], inArr[5], inArr[6]);
+                }
+                
             } else {
                 classList.addClass(inArr[1], inArr[0]);
             }
