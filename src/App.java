@@ -160,13 +160,18 @@ public class App {
             ClassNode node = classList.search(inArr[0]);
             if (node != null) {
                 try {
-                    node.addStudent(node, inArr[3], inArr[2], inArr[4], inArr[5], inArr[6], inArr[7]);
+                    node.addStudent(inArr[3], inArr[2], inArr[4], inArr[5], inArr[6], inArr[7]);
                 } catch (Exception e) {
-                    node.addStudent(node, inArr[3], inArr[2], inArr[4], inArr[5], inArr[6]);
+                    node.addStudent(inArr[3], inArr[2], inArr[4], inArr[5], inArr[6]);
                 }
                 
             } else {
                 classList.addClass(inArr[1], inArr[0]);
+                try {
+                    classList.getTail().addStudent(inArr[3], inArr[2], inArr[4], inArr[5], inArr[6], inArr[7]);
+                } catch (Exception e) {
+                    classList.getTail().addStudent(inArr[3], inArr[2], inArr[4], inArr[5], inArr[6]);
+                }
             }
         }
         System.out.println("\nInput file is read successfully..");

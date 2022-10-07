@@ -60,6 +60,11 @@ public class DoubleLList {
     }
 
     public int getStudentCount() {
+        ClassNode node = this.head;
+        while (node != null) {
+            this.totalStudentCount += node.getStudentCount();
+            node = node.getNext();
+        }
         return this.totalStudentCount;
     }
 }

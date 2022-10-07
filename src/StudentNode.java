@@ -11,6 +11,7 @@ public class StudentNode {
         this.studentId = studentId;
         this.email = email;
         this.address = address;
+        this.next = null;
     }
 
     //---SETTERS---//
