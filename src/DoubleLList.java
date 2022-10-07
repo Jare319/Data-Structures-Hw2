@@ -10,7 +10,7 @@ public class DoubleLList {
         this.totalStudentCount = 0;
     }
 
-    public void addClass(String courseName, String courseNumber) {
+    public void addCourse(String courseName, String courseNumber) {
         if (this.head == null && this.tail == null) {
             this.head = new ClassNode(courseName, courseNumber);
             this.tail = this.head;
@@ -22,8 +22,19 @@ public class DoubleLList {
         this.courseCount++;
     }
 
-    public void removeClass() {
-
+    public boolean deleteCourse(String courseNumber) {
+        ClassNode node = search(courseNumber);
+        if (node != null) {
+            node.getPrevious().setNext(node.getNext());
+            node.getNext().setPrevious(node.getPrevious());
+            node.setNext(null);
+            node.setPrevious(null);
+            this.courseCount--;
+            return true;
+        }
+        else {
+            return false;
+        }
     }
 
     public void setHead(ClassNode node) {

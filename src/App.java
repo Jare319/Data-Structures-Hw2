@@ -24,6 +24,7 @@ public class App {
         System.out.println("8. Display the student list");
         System.out.println("9. Exit\n");
         choice = usrInput.nextInt();
+        usrInput.close();
         switch (choice) {
             case 1:
                 if (!dataInput) {
@@ -133,7 +134,18 @@ public class App {
     }
 
     private static void deleteCourse(DoubleLList classList) {
-
+        String input;
+        Scanner usrInput = new Scanner(System.in);
+        System.out.println("Enter the course number to delete in the format \"XXXX XXXX\" (Ex: MATH 1111");
+        input = usrInput.nextLine();
+        if (classList.deleteCourse(input)) {
+            System.out.println("Summary of the record:");
+            System.out.println("Number of courses registered: " + classList.getCourseCount());
+            System.out.println("Number of total students: " + classList.getStudentCount());
+        } else {
+            System.out.println("A course with this number could not be found, please try again...");
+        }
+        usrInput.close();
     }
 
     private static void readInput(DoubleLList classList) throws FileNotFoundException {
@@ -166,7 +178,7 @@ public class App {
                 }
                 
             } else {
-                classList.addClass(inArr[1], inArr[0]);
+                classList.addCourse(inArr[1], inArr[0]);
                 try {
                     classList.getTail().addStudent(inArr[3], inArr[2], inArr[4], inArr[5], inArr[6], inArr[7]);
                 } catch (Exception e) {
