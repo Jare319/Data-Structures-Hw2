@@ -1,5 +1,6 @@
-Project for CS3353 - Data Structures and Algorithms
+#Project for CS3353 - Data Structures and Algorithms
 
+## Necessary Functions
 - [x] 1. Import Data
 - [x] 2. Delete a course
 - [x] 3. Insert a new course
@@ -9,3 +10,13 @@ Project for CS3353 - Data Structures and Algorithms
 - [x] 7. Display the course list
 - [x] 8. Display the student list
 - [x] 9. Exit
+
+## TODO
+- [ ] DLL sorted alphabetically
+- [ ] SLL sorted alphabetically
+- [ ] Reorganize/Reorder methods
+- [ ] Add comments
+- [ ] Calculate time complexities
+- [ ] Test on CSX
+- [ ] Create PDFs of code
+- [ ] Create txt readme
