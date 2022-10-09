@@ -25,8 +25,16 @@ public class DoubleLList {
     public boolean deleteCourse(String courseNumber) {
         ClassNode node = search(courseNumber);
         if (node != null) {
-            node.getPrevious().setNext(node.getNext());
-            node.getNext().setPrevious(node.getPrevious());
+            if (node.getPrevious() != null) {
+                node.getPrevious().setNext(node.getNext());
+            } else {
+                this.head = node.getNext();
+            }
+            if (node.getNext() != null) {
+                node.getNext().setPrevious(node.getPrevious());
+            } else {
+                this.tail = node.getPrevious();
+            }
             node.setNext(null);
             node.setPrevious(null);
             this.courseCount--;
@@ -71,6 +79,7 @@ public class DoubleLList {
     }
 
     public int getStudentCount() {
+        this.totalStudentCount = 0;
         ClassNode node = this.head;
         while (node != null) {
             this.totalStudentCount += node.getStudentCount();

@@ -20,4 +20,25 @@ public class SingleLList {
         }
     }
 
+    public void deleteStudent() {
+
+    }
+
+    public void setHead(StudentNode node) {
+        this.head = node;
+    }
+
+    public void setTail(StudentNode node) {
+        this.tail = node;
+    }
+
+    public StudentNode getHead() {
+        return this.head;
+    }
+
+    public StudentNode getTail() {
+        return this.tail;
+    }
+
+
 }
