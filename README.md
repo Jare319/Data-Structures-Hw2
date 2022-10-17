@@ -1,4 +1,4 @@
-#Project for CS3353 - Data Structures and Algorithms
+# Project for CS3353 - Data Structures and Algorithms
 
 ## Necessary Functions
 - [x] 1. Import Data
